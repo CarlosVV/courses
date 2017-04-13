@@ -2,6 +2,7 @@ package edu.mum.cs.projects.attendance.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import edu.mum.cs.projects.attendance.domain.BarcodeRecord;
 import edu.mum.cs.projects.attendance.domain.complex.StudentAttendance;
@@ -49,8 +50,15 @@ public class DataAccessServiceImpl implements DataAccessService {
 	}
 
 	@Override
-	public List<CourseOffering> getAllCourseOfferings() {
-		return SpreadsheetUtil.getAllCourseOfferings();
+	public List<CourseOffering> getAllCourseOfferings() {		
+		List<CourseOffering> offerings = SpreadsheetUtil.getAllCourseOfferings();
+		List<Session> sessions = getAllSessions();
+		
+		offerings.stream()
+			.peek(co -> co.setSessions(sessions.stream().filter(s -> s.getBlock().equals(co.getBlock())).collect(Collectors.toSet())))
+			.collect(Collectors.toList());
+		
+		return offerings;	
 	}
 	
 	@Override

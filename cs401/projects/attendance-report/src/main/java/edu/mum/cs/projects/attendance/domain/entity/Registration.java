@@ -24,8 +24,6 @@ public class Registration {
 
 	private CourseOffering courseOffering;
 
-	private boolean[] attendance;
-
 	public int getId() {
 		return id;
 	}
@@ -56,14 +54,6 @@ public class Registration {
 
 	public void setCourseOffering(CourseOffering courseOffering) {
 		this.courseOffering = courseOffering;
-	}
-
-	public boolean[] getAttendance() {
-		return attendance;
-	}
-
-	public void setAttendance(boolean[] attendance) {
-		this.attendance = attendance;
 	}
 
 }
