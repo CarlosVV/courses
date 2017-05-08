@@ -33,6 +33,7 @@ public class RegistrationParser implements Function<Row, Registration> {
         
         Student student = SpreadsheetUtil.getStudentList()
         		.stream()
+        		.parallel()
         		.filter(s -> s.getId().equals(row.getCell(2).getStringCellValue()))
         		.findFirst()
         		.get();

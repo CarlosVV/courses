@@ -29,6 +29,7 @@ public class StudentParser implements Function<Row, Student> {
         student.setFirstName(row.getCell(2).getStringCellValue());
         student.setLastName(row.getCell(3).getStringCellValue());
         student.setBarCode(row.getCell(4).getStringCellValue());
+        
         return student;
     }
 }

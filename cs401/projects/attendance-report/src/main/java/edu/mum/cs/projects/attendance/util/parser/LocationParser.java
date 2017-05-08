@@ -19,7 +19,7 @@ import edu.mum.cs.projects.attendance.domain.entity.Location;
  * @since 1.0.0
  * 
  */
-public class LocationParser implements Function<Row, Location>{
+public class LocationParser implements Function<Row, Location> {
 	
     @Override
     public Location apply(Row row) {
