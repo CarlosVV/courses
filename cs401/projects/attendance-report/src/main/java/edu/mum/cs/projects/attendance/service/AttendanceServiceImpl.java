@@ -15,7 +15,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 		
 		// 2) Loop over all the course offerings
 		
-		// 3) For each course offering, get the list of registrationsfor that course from 
+		// 3) For each course offering, get the list of registrations for that course from 
 		// course service
 		
 		// 4) For each registration object, get the student
